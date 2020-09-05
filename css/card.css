@@ -67,6 +67,7 @@ img-s {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
 }
+@media only screen and (min-width: 768px) {
 body {
     background: #e2e1e0;
     text-align: center;
@@ -134,4 +135,4 @@ class-s {
 	background-size: cover;
     background-repeat: no-repeat;
   }
-  
+}
