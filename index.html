@@ -13,107 +13,69 @@
     <meta name="description" content="Iyogera Lesson App, For an efficient classroom management and live lesson" />
     <meta name="keywords" content="iyogera, lesson, lessons, live lesson, classroom, school, Iyogera" />
 
-    <link href="css/bulma.css" rel="stylesheet" type="text/css" />
-    <link href="css/card.css" rel="stylesheet" type="text/css" />
-
+    <link href="css/iyogera.css" rel="stylesheet" type="text/css" />
+    <script src="js/iyogera.js"></script>
   </head>
-
-  <body>
+<body class="">
+  <main class="concord" id="concord-cards">
     <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="https://bulma.io">
-                <img src="img/iyogera_c_mid.png" width="112" height="28">
-              </a>
-          
-              
-            </div>
-          
-            <div id="navbarBasicExample" class="navbar-menu">
-              
-          
-              <div class="navbar-end">
-                
-                    </div>
-                  </div>
-                
-              </div>
-            </div>
-          </nav>
-          
-        
+      <a href="#"><avatar style="background-image:url(img/100538759_3042369505846272_7693349259743068160_o.jpg)"></avatar></a>
     </header>
-    <div class="card card-2">
-        <img-s>
-            <figure class="image is-96x96">
-                <img class="is-rounded" src="img/100538759_3042369505846272_7693349259743068160_o.jpg">
-            </figure>
-            <text-ss>
-              <h3 class="title is-2">
-                  Hi, <a href="#">Wallace</a>
-                <br>
-                English Test
-                <br>
-                score was 51
-              </h3>
-              </text-ss>              
-            <h5 class="subtitle is-5">
-                your overall
-                <br>
-                percentage
-                <br>
-                
-            </h5>
-            <h4 style="color: green">69%</h4>
+    <!--
+Card = Original Card white bttom
+Card i = Icon/Image with price
+Card x = Card without icon and footer
+Card V = Card with video-->
+    <div class="card xl i">
+      <input type="button" class="concord exit" value="×"/>
+      <section class="wrapper">
+        <img style="background-color: #b3b3b3; background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/565097/city-landscape-vector.png);" align="right" alt=""></img>
+        <header class="card-title">
+          <img class="icon" style="background-image: url(img/100538759_3042369505846272_7693349259743068160_o.jpg);"></img>
+          <h2>Hi, <a href="#">Wallace</a></h2>
+          <p><h4>Progress..........71%</h4></p>
+        </header>
+        <footer class="card-footer">
+          
+          
+        </footer>
+      </section>
+      <div class="content">
+      </div>
+    </div>
+        <div class="card x" data-color="" style="">
+      <input type="button" class="concord exit" value="×"/>
+      <section class="wrapper">
+        <img style="background-color: #b3b3b3; " alt=""></img>
+        <header class="card-title">
+          <h2>Classes</h2>
+          <h6>2 upcoming classes</h6>
+        </header>
+        <footer class="card-footer">
+          <p>Tap to learn how to save long web paes and chat threads.</p>
+        </footer>
+      </section>
+      <div class="content">
         
-        </img-s>
+      </div>
     </div>
-    <div class="card card-1">
-        <class-s>
-            <h2 class="title is-2">Classes </h2>
-            <p class="subtitle is-6">05, September</p>
-            <br>
-            <article class="message is-primary">
-              <div class="message-body">
-                <strong>Mathematics</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.50 - 10.30
-              </div>  
-            </article>
-
-            <article class="message is-danger">
-              <div class="message-body">
-                <strong>Computer Science</strong> &nbsp;&nbsp;11.25 - 12.30
-              </div>
-              
-            </article>
-            <article class="message is-warning">
-              <div class="message-body">
-                <strong>English Language</strong> &nbsp;&nbsp;13.30 - 14.00
-              </div>
-              
-            </article>
-              
-        </class-s>
+        <div class="card x" data-color="" style="">
+      <input type="button" class="concord exit" value="×"/>
+      <section class="wrapper">
+        <img style="background-color: #b3b3b3; " alt=""></img>
+        <header class="card-title">
+          <h2>Homework</h2>
+          <h6>4 Homework due</h6>
+        </header>
+        <footer class="card-footer">
+          <p>Tap to learn how to save long web paes and chat threads.</p>
+        </footer>
+      </section>
+      <div class="content">
+        
+      </div>
     </div>
-    <div class="card card-1 ">
-        <class-s>
-            <h2 class="title is-2">Materials </h2>
-            <p class="subtitle is-6">02 Updates</p>
-            <br>
-            <article>
-              Fresh
-            </article>
-            <article>
-              Blame
-            </article>
-        </class-s>
-    </div>
-    <div class="card card-1">
-        <class-s>
-            <h2 class="title is-2">Homework </h2>
-            <p class="subtitle is-6">03 Homework Due</p>
-            <br>
-        </class-s>
-    </div>
-
-  </body>
+  </main>
+  
+</body>
 </html>
