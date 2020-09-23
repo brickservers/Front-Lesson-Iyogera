@@ -1,81 +1,160 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
 
+<head>
+    <meta charset="utf-8">
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>Lessons | Iyogera</title>
-
     <meta name="description" content="Iyogera Lesson App, For an efficient classroom management and live lesson" />
     <meta name="keywords" content="iyogera, lesson, lessons, live lesson, classroom, school, Iyogera" />
-
     <link href="css/iyogera.css" rel="stylesheet" type="text/css" />
-    <script src="js/iyogera.js"></script>
-  </head>
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+    <script src="js/axios.js"></script>
+    <script type="text/javascript" src="js/iyogera.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+
 <body class="">
-  <main class="concord" id="concord-cards">
-    <header>
-      <a href="#"><avatar style="background-image:url(img/100538759_3042369505846272_7693349259743068160_o.jpg)"></avatar></a>
-    </header>
-    <!--
+    <main class="concord" id="concord-cards">
+        <header>
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="https://bulma.io">
+                <img src="img/iyogera_c_mid.png" width="112" height="28">
+              </a>
+          
+              
+            </div>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </nav>
+        </header>
+        <!--
 Card = Original Card white bttom
 Card i = Icon/Image with price
 Card x = Card without icon and footer
 Card V = Card with video-->
-    <div class="card xl i">
-      <input type="button" class="concord exit" value="×"/>
-      <section class="wrapper">
-        <img style="background-color: #b3b3b3; background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/565097/city-landscape-vector.png);" align="right" alt=""></img>
-        <header class="card-title">
-          <img class="icon" style="background-image: url(img/100538759_3042369505846272_7693349259743068160_o.jpg);"></img>
-          <h2>Hi, <a href="#">Wallace</a></h2>
-          <p><h4>Progress..........71%</h4></p>
-        </header>
-        <footer class="card-footer">
-          
-          
-        </footer>
-      </section>
-      <div class="content">
-      </div>
-    </div>
-        <div class="card x" data-color="" style="">
-      <input type="button" class="concord exit" value="×"/>
-      <section class="wrapper">
-        <img style="background-color: #b3b3b3; " alt=""></img>
-        <header class="card-title">
-          <h2>Classes</h2>
-          <h6>2 upcoming classes</h6>
-        </header>
-        <footer class="card-footer">
-          <p>Tap to learn how to save long web paes and chat threads.</p>
-        </footer>
-      </section>
-      <div class="content">
+        <div class="card xl i">
+            <input type="button" class="concord exit" value="×" />
+            <section class="wrapper">
+                <img style="background-color: #b3b3b3; background-image: url(img/man.png);" align="right" alt=""></img>
+                <header class="card-title">
+                    <img class="icon" style="background-image: url(img/100538759_3042369505846272_7693349259743068160_o.jpg);"></img>
+                    <h2>Hi, <a href="#">Wallace</a></h2>
+                    <br>
+                    <br>
+                    <p>
+                        <h4>Progress..........71%</h4>
+                    </p>
+                </header>
+                <footer class="card-footer">
+                </footer>
+            </section>
+            <div class="content">
+            </div>
+        </div>
+        <div class="card x" data-color="" >
+            <section class="wrapper">
+                <img style="background-color: #f0eded; " alt=""></img>
+                <header class="card-title">
+                    <h2>Classes</h2>
+                    <h6 style="color: green">2 upcoming classes</h6>
+                    <br>
+                    <hr>
+                </header>
+                <footer class="card-footer">
+                    <div id="resp"></div>
+                </footer>
+            </section>
+            <div class="content">
+                hello there
+            </div>
+        </div>
+        <div class="card x" data-color="" >
+            <input type="button" class="concord exit" value="×" />
+            <section class="wrapper">
+                <img style="background-color: #f0eded; " alt=""></img>
+                <header class="card-title">
+                    <h2>Homework</h2>
+                    <h6 style="color: red">4 Homework due</h6>
+                    <br>
+                    <hr>
+                </header>
+                <footer class="card-footer">
+                    <div class="items-body">
+                        <div class="items-body-content">
+                            <h6 style="color: black"> Usabilty Testing</h6>
+                            <i class="em em-closed_book" aria-role="presentation" aria-label="CLOSED BOOK"></i>
+                        </div>
+                        <div class="items-body-content">
+                            <h6 style="color: black"> Everything of Everyday Things</h6>
+                            <i class="em em-closed_book" aria-role="presentation" aria-label="CLOSED BOOK"></i>
+                        </div>
+                        <div class="items-body-content">
+                            <h6 style="color: black">Practical Empathy: For Collaboration & Creativity in Your Work</h6>
+                            <i class="em em-closed_book" aria-role="presentation" aria-label="CLOSED BOOK"></i>
+                        </div>
+                        <div class="items-body-content">
+                            <h6 style="color: black">About Face: The Essentials of Interaction Design</h6>
+                            <i class="em em-closed_book" aria-role="presentation" aria-label="CLOSED BOOK"></i>
+                        </div>
+                        <div class="items-body-content">
+                            <h6 style="color: black">About Face: The Essentials of Interaction Design</h6>
+                            <i class="em em-closed_book" aria-role="presentation" aria-label="CLOSED BOOK"></i>
+                        </div>
+                    </div>
+                </footer>
+            </section>
+            <div class="content">
+            </div>
+        </div>
+    </main>
+    <script> 
         
-      </div>
-    </div>
-        <div class="card x" data-color="" style="">
-      <input type="button" class="concord exit" value="×"/>
-      <section class="wrapper">
-        <img style="background-color: #b3b3b3; " alt=""></img>
-        <header class="card-title">
-          <h2>Homework</h2>
-          <h6>4 Homework due</h6>
-        </header>
-        <footer class="card-footer">
-          <p>Tap to learn how to save long web paes and chat threads.</p>
-        </footer>
-      </section>
-      <div class="content">
-        
-      </div>
-    </div>
-  </main>
-  
+        // axios.get('https://iyogera.dev/iyogera2/api/lessons')
+        // .then(res => res.json())
+        // .then(res => {
+        //     console.log(res.data);
+        // } ) 
+
+        // axios.get('https://iyogera.dev/iyogera2/api/lessons')
+        // .then(res = res.json())
+        // .then(function (response) {
+        //     var deep = (response);
+        //     console.log(deep.data);
+        //   document.getElementById('resp').innerHTML = 
+
+        //     `<div class="items-body"> 
+        //         <div class="items-body-content">
+        //             <h6 style="color: black"> ${JSON.stringify(deep.data[0].title)} </h6>
+        //             <i class="em em-information_source" aria-role="presentation" aria-label="INFORMATION SOURCE"></i>
+        //         </div>
+        //     </div>`
+        // })
+        // .catch(function (err) {
+        //   document.getElementById('resp').innerHTML = '<h6 style="color: red">' + err.message + '</h6>';
+        // });
+        async function makeGetRequest() { 
+            let res = await axios.get('https://iyogera.dev/iyogera2/api/lessons'); 
+            let data = res.data; 
+            document.getElementById('resp').innerHTML = 
+            //console.log(data);
+            `<div class="items-body"> 
+                <div class="items-body-content">
+                    <h6 style="color: black"> ${JSON.stringify(data)} </h6>
+                    <i class="em em-information_source" aria-role="presentation" aria-label="INFORMATION SOURCE"></i>
+                </div>
+            </div>` 
+                        } 
+            makeGetRequest();
+    </script>
 </body>
+
 </html>
