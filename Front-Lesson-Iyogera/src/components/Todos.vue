@@ -3,9 +3,9 @@
   <div class="card xl i">
             <input type="button" class="concord exit" value="×" />
             <section class="wrapper">
-                <img style="background-color: #b3b3b3; background-image: url(https://iyogera.dev/iyogera2/img/man-copy.png)" alt=""></img>
+                <img style="background-color: #b3b3b3; background-image: url(https://iyogera.dev/iyogera2/img/man-copy.png)" alt="">
                 <header class="card-title">
-                    <img class="icon" style="background-image: url(https://iyogera.dev/iyogera2/img/100538759_3042369505846272_7693349259743068160_o.jpg);"></img>
+                    <img class="icon" style="background-image: url(https://iyogera.dev/iyogera2/img/100538759_3042369505846272_7693349259743068160_o.jpg);">
                     <h3>Hi,</h3> <h2><a href="#">Wallace</a></h2>
                     <div class="container is-fluid">
                     <p>
@@ -15,7 +15,7 @@
                         <b-progress type="is-danger" :value="25" show-value format="percent"></b-progress>
                         <h4>Exams</h4>
                         <b-progress type="is-success" :value="72" show-value format="percent"></b-progress>
-                    </p>
+                    
                     </div>
                 </header>
                 <footer class="card-footer">
@@ -24,9 +24,10 @@
             <div class="content">
             </div>
         </div>
+        <router-link v-bind="todo" to="lessons">
         <div class="card x" data-color="" >
             <section class="wrapper">
-                <img style="background-color: #f0eded; " alt=""></img>
+                <img style="background-color: #f0eded; " alt="">
                 <header class="card-title">
                     <h2>Lessons</h2>
                     <h6 style="color: green">2 upcoming lessons</h6>
@@ -45,10 +46,11 @@
                 
             </div>
         </div>
+        </router-link>
         <div class="card x" data-color="" >
             <input type="button" class="concord exit" value="×" />
             <section class="wrapper">
-                <img style="background-color: #f0eded; " alt=""></img>
+                <img style="background-color: #f0eded; " alt="">
                 <header class="card-title">
                     <h2>Homework</h2>
                     <h6 style="color: red">4 Homework due</h6>
@@ -57,22 +59,6 @@
                 </header>
                 <footer class="card-footer">
                     <div class="items-body">
-                        <div class="items-body-content">
-                            <h6 style="color: black"> Usabilty Testing</h6>
-                            <i class="em em-closed_book" aria-role="presentation" aria-label="CLOSED BOOK"></i>
-                        </div>
-                        <div class="items-body-content">
-                            <h6 style="color: black"> Everything of Everyday Things</h6>
-                            <i class="em em-closed_book" aria-role="presentation" aria-label="CLOSED BOOK"></i>
-                        </div>
-                        <div class="items-body-content">
-                            <h6 style="color: black">Practical Empathy: For Collaboration & Creativity in Your Work</h6>
-                            <i class="em em-closed_book" aria-role="presentation" aria-label="CLOSED BOOK"></i>
-                        </div>
-                        <div class="items-body-content">
-                            <h6 style="color: black">About Face: The Essentials of Interaction Design</h6>
-                            <i class="em em-closed_book" aria-role="presentation" aria-label="CLOSED BOOK"></i>
-                        </div>
                         <div class="items-body-content">
                             <h6 style="color: black">About Face: The Essentials of Interaction Design</h6>
                             <i class="em em-closed_book" aria-role="presentation" aria-label="CLOSED BOOK"></i>

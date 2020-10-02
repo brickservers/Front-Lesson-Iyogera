@@ -1,27 +1,36 @@
 <template>
   <div class="tweet">
-  <div v-bind:key="lesson.id" v-for="lesson in lessons">  
-      <ListLessons v-bind:lesson="lesson" />
+  <div v-bind:key="lessons.id" v-for="lessons in lesson">  
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+            <figure class="image">
+              
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p><strong>👩🏾‍🏫 just</strong> <small>@wallace</small></p>
+              <p>We all know why</p>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </div>  
 </template>
 
 <script>
 
-import ListLessons from "./ListLesson.vue"
 import Vue from 'vue'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 Vue.use(Buefy)
 
-
 export default {
   name: "Lessons",
-  components: {
-    ListLessons
-  },
-  props: ["lessons"]
-}
+  props: ["lesson"],
+  }
 </script>
 
 <style lang="scss" scoped>

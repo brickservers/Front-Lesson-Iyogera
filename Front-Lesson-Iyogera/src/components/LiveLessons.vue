@@ -10,24 +10,6 @@
         <div class="content">
         </div>
     </div>
-    <div class="card xl i">
-        <input type="button" class="concord exit" value="×" />
-        <section class="wrapper">
-            <img style="background-color: #b3b3b3; background-image: url(img/man.png);" align="right" alt=""></img>
-            <header class="card-title">
-                <img class="icon" style="background-image: url(img/100538759_3042369505846272_7693349259743068160_o.jpg);"></img>
-                <h2>Hi, <a href="#">Wallace</a></h2>
-                <br>
-                <br>
-                <p>
-                    <h4>Progress..........71%</h4>
-            </header>
-            <footer class="card-footer">
-            </footer>
-        </section>
-        <div class="content">
-        </div>
-    </div>
     </main>
 </template>
 
@@ -511,8 +493,6 @@ input[type="button"].concord-exit:active {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.card>.content img:after {}
 
 .card.in-flight {
     cursor: default;

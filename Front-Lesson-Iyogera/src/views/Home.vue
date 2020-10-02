@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 <template>
   <div id="app">
     <Todos v-bind:todos="todos" />
@@ -8,7 +9,6 @@
 
 import Vue from 'vue'
 import Todos from '../components/Todos';
-import AddTodo from '../components/AddTodo';
 import axios from 'axios';
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
@@ -18,7 +18,7 @@ export default {
   name: 'Home',
   components: {
     Todos,
-    AddTodo
+    
   },
   data() {
     return {
@@ -26,11 +26,7 @@ export default {
     }
   },
   methods: {
-    deleteTodo(id) {
-      axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-        .then(res => this.todos = this.todos.filter(todo => todo.id !== id))
-        .catch(err => console.log(err));
-    },
+    
     addTodo(newTodo) {
       const { title, completed } = newTodo;
 
@@ -39,12 +35,14 @@ export default {
         completed
       })
         .then(res => this.todos = [...this.todos, res.data])
+        // eslint-disable-next-line no-console
         .catch(err => console.log(err));
     }
   },
   created() {
     axios.get('https://iyogera.dev/iyogera2/api/live_lesson')
       .then(res => this.todos = res.data.data)
+      // eslint-disable-next-line no-console
       .catch(err => console.log(err));
   }
 }

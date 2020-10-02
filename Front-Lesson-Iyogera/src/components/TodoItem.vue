@@ -41,15 +41,7 @@ export default {
         },
   methods: {
     loadMore: function() {
-      this.busy = true;
-
-      setTimeout(() => {
-        for (var i = 0, j = 10; i < j; i++) {
-          // eslint-disable-next-line no-undef
-          this.todos.push({ name: count++ });
-        }
-        this.busy = false;
-      }, 1000);
+     
     }
   }
 }

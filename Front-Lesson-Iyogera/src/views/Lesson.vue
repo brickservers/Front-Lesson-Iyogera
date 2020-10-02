@@ -1,36 +1,52 @@
 <template>
-  <div id="app">
-    <LiveLessons v-bind:livelessons="livelessons" />
-  </div>
+  <div id="app">  
+    <div class="tweet"> 
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+            <figure class="image">
+              
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p><strong>👩🏾‍🏫 just</strong> <small>@wallace</small></p>
+              <p>We all know why</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>  
 </template>
 
 <script>
 
 import Vue from 'vue'
-import LiveLessons from '../components/LiveLessons';
+//import Lessons from '../components/Lessons.vue';
 import axios from 'axios';
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 Vue.use(Buefy)
 
 export default {
-  name: 'Incall',
-  components: {
-    LiveLessons
-  },
+  
+  name: 'Lesson',
+  props: ["todo"],
+
   data() {
     return {
-      livelessons: []
+      todos: []
     }
   },
   methods: {
     
-  created() {
+  mounted() {
     axios.get('https://iyogera.dev/iyogera2/api/live_lesson')
-      .then(res => this.livelessons = res.data)
+      .then(res => this.todos = res.data.data)
       // eslint-disable-next-line no-console
       .catch(err => console.log(err));
-  }
+    }
   }
 }
 </script>
