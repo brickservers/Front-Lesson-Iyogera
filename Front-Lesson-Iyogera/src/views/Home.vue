@@ -2,6 +2,7 @@
 <template>
   <div id="app">
     <Todos v-bind:todos="todos" />
+    <Todos v-bind:home="home" />
   </div>
 </template>
 
@@ -22,7 +23,8 @@ export default {
   },
   data() {
     return {
-      todos: []
+      todos: [],
+      home: []
     }
   },
   methods: {
@@ -42,6 +44,11 @@ export default {
   created() {
     axios.get('https://iyogera.dev/iyogera2/api/live_lesson')
       .then(res => this.todos = res.data.data)
+      // eslint-disable-next-line no-console
+      .catch(err => console.log(err));
+
+      axios.get('https://iyogera.dev/iyogera2/api/lessons')
+      .then(res => this.home = res.data)
       // eslint-disable-next-line no-console
       .catch(err => console.log(err));
   }

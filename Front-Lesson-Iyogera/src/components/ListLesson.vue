@@ -1,6 +1,6 @@
 <template>
   <div class="tweet">
-  <div v-bind:key="lessons.id" v-for="lessons in lesson">  
+  <div v-bind:key="lessons.id" v-for="lessons in todos">  
       <div class="box">
         <article class="media">
           <div class="media-left">
@@ -28,8 +28,8 @@ import 'buefy/dist/buefy.css'
 Vue.use(Buefy)
 
 export default {
-  name: "Lessons",
-  props: ["lesson"],
+  name: "ListLesson",
+  props: ["todos"],
   }
 </script>
 
