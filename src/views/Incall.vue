@@ -1,57 +1,36 @@
-
 <template>
   <div id="app">
-    <Todos v-bind:todos="todos" />
+    <LiveLessons v-bind:livelessons="livelessons" />
   </div>
 </template>
 
 <script>
 
 import Vue from 'vue'
-import Todos from '../components/Todos';
+import LiveLessons from '../components/LiveLessons';
 import axios from 'axios';
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 Vue.use(Buefy)
 
 export default {
-  name: 'Home',
+  name: 'Incall',
   components: {
-    Todos,
-    
+    LiveLessons
   },
   data() {
     return {
-      todos: [],
-      home: []
+      livelessons: []
     }
   },
   methods: {
     
-    addTodo(newTodo) {
-      const { title, completed } = newTodo;
-
-      axios.post('https://jsonplaceholder.typicode.com/todos', {
-        title,
-        completed
-      })
-        .then(res => this.todos = [...this.todos, res.data])
-        // eslint-disable-next-line no-console
-        .catch(err => console.log(err));
-    }
-  },
   created() {
     axios.get('https://iyogera.dev/iyogera2/api/live_lesson')
-      .then(res => this.todos = res.data.data)
+      .then(res => this.livelessons = res.data)
       // eslint-disable-next-line no-console
       .catch(err => console.log(err));
-  },
-
-  mounted(){
-      axios.get('https://iyogera.dev/iyogera2/api/lessons')
-      .then(res => this.home = res.data)
-      // eslint-disable-next-line no-console
-      .catch(err => console.log(err));
+  }
   }
 }
 </script>

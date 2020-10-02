@@ -22,8 +22,7 @@ export default {
   },
   data() {
     return {
-      todos: [],
-      home: []
+      todos: []
     }
   },
   methods: {
@@ -43,13 +42,6 @@ export default {
   created() {
     axios.get('https://iyogera.dev/iyogera2/api/live_lesson')
       .then(res => this.todos = res.data.data)
-      // eslint-disable-next-line no-console
-      .catch(err => console.log(err));
-  },
-
-  mounted(){
-      axios.get('https://iyogera.dev/iyogera2/api/lessons')
-      .then(res => this.home = res.data)
       // eslint-disable-next-line no-console
       .catch(err => console.log(err));
   }
