@@ -24,7 +24,7 @@
             <div class="content">
             </div>
         </div>
-        <router-link v-bind="todo" to="lessons">
+        <router-link to="lessons">
         <div class="card x" data-color="" >
             <section class="wrapper">
                 <img style="background-color: #f0eded; " alt="">
@@ -54,7 +54,6 @@
                 <header class="card-title">
                     <h2>Homework</h2>
                     <h6 style="color: red">4 Homework due</h6>
-                    <br>
                     <hr>
                 </header>
                 <footer class="card-footer">

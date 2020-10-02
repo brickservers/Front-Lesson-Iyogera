@@ -17,6 +17,40 @@
         </article>
       </div>
     </div>
+    <div class="tweet"> 
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+            <figure class="image">
+              
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p><strong>👩🏾‍🏫 just</strong> <small>@wallace</small></p>
+              <p>We all know why</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tweet"> 
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+            <figure class="image">
+              
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p><strong>👩🏾‍🏫 just</strong> <small>@wallace</small></p>
+              <p>We all know why</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
   </div>  
 </template>
 
@@ -32,7 +66,6 @@ Vue.use(Buefy)
 export default {
   
   name: 'Lesson',
-  props: ["todo"],
 
   data() {
     return {
@@ -41,7 +74,7 @@ export default {
   },
   methods: {
     
-  mounted() {
+  created() {
     axios.get('https://iyogera.dev/iyogera2/api/live_lesson')
       .then(res => this.todos = res.data.data)
       // eslint-disable-next-line no-console

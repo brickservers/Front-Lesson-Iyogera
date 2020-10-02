@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+
 <template>
   <div id="app">
     <Todos v-bind:todos="todos" />
