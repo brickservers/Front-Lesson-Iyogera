@@ -1,12 +1,22 @@
 <template>
-  <b-navbar>
+  <b-navbar fixed-top transparent>
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
                 <img
                     src="@/assets/img/iyogera_c_mid.png"
-                    alt="Lightweight UI components for Vue.js based on Bulma"
+                    alt="Lesson Iyogera"
                 >
             </b-navbar-item>
+        </template>
+        
+          <template slot="end">
+          <b-navbar-item tag="router-link" :to="{ path: '/' }">
+            <div class="buttons">
+              <a class="button is-primary">
+                Home
+              </a>
+            </div>            
+          </b-navbar-item>
         </template>
   </b-navbar>
 </template>

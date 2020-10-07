@@ -20,7 +20,7 @@ export default new Router({
     },
     {
       path: '/lessons',
-      name: 'Lessons',
+      name: 'Lesson',
       component: Lesson
     },
     {

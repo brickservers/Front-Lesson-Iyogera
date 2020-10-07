@@ -6,7 +6,12 @@
                 <img style="background-color: #b3b3b3; background-image: url(https://iyogera.dev/iyogera2/img/man-copy.png)" alt="">
                 <header class="card-title">
                     <img class="icon" style="background-image: url(https://iyogera.dev/iyogera2/img/100538759_3042369505846272_7693349259743068160_o.jpg);">
-                    <h3>Hi,</h3> <h2><a href="#">Wallace</a></h2>
+                    <h3 style="color: black">Hi,</h3> 
+                    <h2>
+                        
+                        <a href="#">Wallace</a>
+                        
+                    </h2>
                     <div class="container is-fluid">
                     <p>
                         <h4>Assigmnet</h4>
@@ -29,8 +34,8 @@
             <section class="wrapper">
                 <img style="background-color: #f0eded; " alt="">
                 <header class="card-title">
-                    <h2>Lessons</h2>
-                    <h6 style="color: green">2 upcoming lessons</h6>
+                    <h2 style="color: black">Lessons</h2>
+                    <h6 style="color: green">0 upcoming lessons</h6>
                     
                     <hr>
                 </header>
@@ -50,20 +55,12 @@
         <div class="card x" data-color="" >
             <input type="button" class="concord exit" value="×" />
             <section class="wrapper">
-                <img style="background-color: #f0eded; " alt="">
+                <img style="background-color: #b3b3b3; background-image: url(https://iyogera.dev/iyogera2/img/lady.jpg)" alt="">
                 <header class="card-title">
-                    <h2>Homework</h2>
-                    <h6 style="color: red">4 Homework due</h6>
+                    <h2 style="color: black">Homework</h2>
                     <hr>
+                    <h6 style="color: red">Coming Soon</h6>
                 </header>
-                <footer class="card-footer">
-                    <div class="items-body">
-                        <div class="items-body-content">
-                            <h6 style="color: black">About Face: The Essentials of Interaction Design</h6>
-                            <i class="em em-closed_book" aria-role="presentation" aria-label="CLOSED BOOK"></i>
-                        </div>
-                    </div>
-                </footer>
             </section>
             <div class="content">
             </div>
@@ -72,6 +69,8 @@
 </template>
 
 <script>
+
+import axios from 'axios';
 import TodoItem from './TodoItem.vue';
 import Vue from 'vue'
 import Buefy from 'buefy'
@@ -81,11 +80,29 @@ Vue.use(Buefy)
 
 export default {
   name: "Todos",
+
   components: {
     TodoItem
   },
+
+data() {
+    return {
+      user: []
+    }
+  },
+
+  async created() {
+    try{
+    let res = await axios.get('https://iyogera.dev/iyogera2/api/users')
+      this.user = res.data
+      
+    }catch(err){console.log(err)
+      }
+    },
+
   props: ["todos"]
 }
+
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 {
-  "name": "vue_crash_todolist",
-  "version": "0.1.0",
+  "name": "Iyogera_lesson",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
