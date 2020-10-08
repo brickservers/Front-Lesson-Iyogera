@@ -32,7 +32,7 @@ export default {
 
   async created() {
     try{
-    let res = await axios.get('https://iyogera.dev/iyogera2/api/live_lesson')
+    let res = await axios.get('https://demo.iyogera.com/api/live_lesson')
       this.todos = res.data.data
       
     }catch(err){console.log(err)

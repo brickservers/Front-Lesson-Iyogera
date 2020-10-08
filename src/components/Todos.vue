@@ -3,9 +3,9 @@
   <div class="card xl i">
             <input type="button" class="concord exit" value="×" />
             <section class="wrapper">
-                <img style="background-color: #b3b3b3; background-image: url(https://iyogera.dev/iyogera2/img/man-copy.png)" alt="">
+                <img style="background-color: #b3b3b3; background-image: url(https://demo.iyogera.com/img/man-copy.png)" alt="">
                 <header class="card-title">
-                    <img class="icon" style="background-image: url(https://iyogera.dev/iyogera2/img/100538759_3042369505846272_7693349259743068160_o.jpg);">
+                    <img class="icon" style="background-image: url(https://demo.iyogera.com/img/100538759_3042369505846272_7693349259743068160_o.jpg);">
                     <h3 style="color: black">Hi,</h3> 
                     <h2>
                         
@@ -55,7 +55,7 @@
         <div class="card x" data-color="" >
             <input type="button" class="concord exit" value="×" />
             <section class="wrapper">
-                <img style="background-color: #b3b3b3; background-image: url(https://iyogera.dev/iyogera2/img/lady.jpg)" alt="">
+                <img style="background-color: #b3b3b3; background-image: url(https://demo.iyogera.com/img/lady.jpg)" alt="">
                 <header class="card-title">
                     <h2 style="color: black">Homework</h2>
                     <hr>
@@ -91,14 +91,19 @@ data() {
     }
   },
 
-  async created() {
-    try{
-    let res = await axios.get('https://iyogera.dev/iyogera2/api/users')
-      this.user = res.data
-      
-    }catch(err){console.log(err)
-      }
-    },
+  async mounted() {
+    const config = {
+         method: 'get', 
+         url: 'https://demo.iyogera.com/api/me', 
+         headers: {
+              'Authorization': '*',
+              'Access-Control-Allow-Origin': '*' 
+                } 
+              }
+              let res = await axios(config) 
+              console.log(res.data); 
+      //this.user = res.data
+  },
 
   props: ["todos"]
 }

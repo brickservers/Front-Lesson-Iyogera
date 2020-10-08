@@ -5,7 +5,7 @@
             <router-link to="in-call">             
             <div class="card " data-color="" >            
                 <section class="wrapper">
-                    <img style="background-color: grey; background-image: url(https://iyogera.dev/iyogera2/img/business-analysis.png)" alt="">                
+                    <img style="background-color: grey; background-image: url(https://demo.iyogera.com/img/business-analysis.png)" alt="">                
                     <footer class="card-footer">
                         <h5> {{lesson.topic}} </h5>
                         <h6>👩🏾‍🏫 {{lesson.name}}</h6>
@@ -37,7 +37,7 @@ export default {
     
   async mounted() {
     try{
-    let res = await axios.get('https://iyogera.dev/iyogera2/api/live_lessons')
+    let res = await axios.get('https://demo.iyogera.com/api/live_lessons')
       this.lessons = res.data
       
     }catch(err){console.log(err)
