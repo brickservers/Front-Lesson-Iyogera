@@ -3,8 +3,8 @@
     <div class="card xl i">
         <input type="button" class="concord exit" value="×" />
         <section class="wrapper">
-            <div v-bind:key="livelessons.id">
-                        <Join v-bind:livelessons="livelessons" />
+            <div >
+                        <Join />
                   </div>
         </section>
         <div class="content">
@@ -24,8 +24,7 @@ export default {
   name: "LiveLessons",
   components: {
     Join
-  },
-  props: ["livelessons"]
+  }
 }
 </script>
 

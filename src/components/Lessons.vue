@@ -2,24 +2,24 @@
     <main class="concord" id="concord-cards">
         <h2 style="color: black"> ⌛️ LESSONS</h2>        
         <div v-bind:key="lesson.id" v-for="lesson in lessons"> 
-            <router-link to="in-call">             
+            <a :href="'/in-call/' + lesson.id">             
             <div class="card " data-color="" >            
                 <section class="wrapper">
-                    <img style="background-color: grey; background-image: url(https://demo.iyogera.com/img/business-analysis.png)" alt="">                
+                    <img style="background-color: grey; background-image: url(https://iyogera.dev/iyogera2/img/business-analysis.png)" alt="">                
                     <footer class="card-footer">
                         <h5> {{lesson.topic}} </h5>
                         <h6>👩🏾‍🏫 {{lesson.name}}</h6>
                     </footer>
                 </section>                    
             </div>
-            </router-link>
+            </a>
         </div>       
     </main> 
 </template>
 
 <script>
 import axios from 'axios';
-//import TodoItem from './TodoItem.vue'; 
+//import Incall from './Incall.vue'; 
 import Vue from 'vue'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
@@ -28,7 +28,7 @@ Vue.use(Buefy)
 
 export default {
   name: "Lessons",
-  
+
   data() {
     return {
       lessons: []

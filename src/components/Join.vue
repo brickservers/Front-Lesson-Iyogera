@@ -17,12 +17,14 @@ export default {
       return {
         roomName: 'kke',
         noSSL: false,
+        width: 600,
+        height: 500,
         userInfo: {
           email: 'user@email.com',
           displayName: '',
         },
         configOverwrite: {
-          enableNoisyMicDetection: false
+          enableNoisyMicDetection: true
         },
         interfaceConfigOverwrite: {
           SHOW_JITSI_WATERMARK: false,

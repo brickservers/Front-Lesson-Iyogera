@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <LiveLessons v-bind:livelessons="livelessons" />
+    <LiveLessons  />
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 
 import Vue from 'vue'
 import LiveLessons from '../components/LiveLessons';
-import axios from 'axios';
+//import axios from 'axios';
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 Vue.use(Buefy)
@@ -17,20 +17,6 @@ export default {
   name: 'Incall',
   components: {
     LiveLessons
-  },
-  data() {
-    return {
-      livelessons: []
-    }
-  },
-  methods: {
-    
-  created() {
-    axios.get('https://iyogera.dev/iyogera2/api/live_lesson')
-      .then(res => this.livelessons = res.data)
-      // eslint-disable-next-line no-console
-      .catch(err => console.log(err));
-  }
   }
 }
 </script>
