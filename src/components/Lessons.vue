@@ -5,7 +5,7 @@
             <a :href="'/in-call/' + lesson.id">             
             <div class="card " data-color="" >            
                 <section class="wrapper">
-                    <img style="background-color: grey; background-image: url(https://iyogera.dev/iyogera2/img/business-analysis.png)" alt="">                
+                    <img style="background-color: grey; background-image: url(https://demo.iyogera.com/img/business-analysis.png)" alt="">                
                     <footer class="card-footer">
                         <h5> {{lesson.topic}} </h5>
                         <h6>👩🏾‍🏫 {{lesson.name}}</h6>
