@@ -14,7 +14,7 @@
                     </h2>
                     <div class="container is-fluid">
                     <p>
-                        <h4>Assigmnet</h4>
+                        <h4>Assigment</h4>
                         <b-progress type="is-success" :value="80" show-value format="percent"></b-progress>
                         <h4>Test</h4>
                         <b-progress type="is-danger" :value="25" show-value format="percent"></b-progress>

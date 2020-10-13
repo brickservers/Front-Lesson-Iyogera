@@ -1,6 +1,7 @@
 <template>
-  <div id="app"> 
-    
+  <div id="app">
+
+    <Header/>
     <Lessons />
     
   </div>  
@@ -11,6 +12,7 @@
 import Vue from 'vue'
 import Lessons from '../components/Lessons';
 //import axios from 'axios';
+import Header from '../components/layout/Header.vue';
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 Vue.use(Buefy)
@@ -20,6 +22,7 @@ export default {
   name: 'Lesson',
   components: {
     Lessons,
+    Header,
   }
 }
 </script>

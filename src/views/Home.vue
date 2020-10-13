@@ -1,7 +1,7 @@
 
 <template>
   <div id="app">
-
+  <Header/>
     <Todos v-bind:todos="todos" v-bind:user="user" />
     
   </div>
@@ -12,6 +12,7 @@
 import Vue from 'vue'
 import Todos from '../components/Todos';
 //import Lessons from '../components/Lessons';
+import Header from '../components/layout/Header.vue';
 import axios from 'axios';
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
@@ -21,6 +22,7 @@ export default {
   name: 'Home',
   components: {
     Todos,
+    Header,
   },
   props: [
     "user"

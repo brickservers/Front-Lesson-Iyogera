@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <LiveLessons v-bind:lessonName="lessonName" v-bind:user="user"  />
+    <Header/>
+    <LiveLessons v-bind:lessonName="lessonName"  />
   </div>
 </template>
 
@@ -9,15 +10,17 @@
 import Vue from 'vue'
 import LiveLessons from '../components/LiveLessons';
 //import axios from 'axios';
+import Header from '../components/layout/Header.vue';
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 Vue.use(Buefy)
 
 export default {
   name: 'Incall',
-  props: ["lessonName", "user"],
+  props: ["lessonName"],
   components: {
-    LiveLessons
+    LiveLessons,
+    Header
   }
 }
 </script>

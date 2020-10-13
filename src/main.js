@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+//import Login from "./Login";
 //import axios from 'axios';
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
@@ -12,3 +13,6 @@ new Vue({
   router,
   render: h => h(App)
 }).$mount('#app')
+
+
+

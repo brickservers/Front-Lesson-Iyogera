@@ -1,18 +1,16 @@
 <template>
   <div id="app">
-    <Header />
+
     <router-view v-bind:user="user" />
   </div>
 </template>
 
 <script>
-import Header from './components/layout/Header';
+//import Header from './components/layout/Header';
 import axios from "axios";
 export default {
   name:"app",
-  components: {
-    Header
-  },
+
 
   data() {
     return {
