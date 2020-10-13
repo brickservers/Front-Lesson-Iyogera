@@ -4,8 +4,8 @@
         <input type="button" class="concord exit" value="×" />
         <section class="wrapper">
             <div >
-                        <Join />
-                  </div>
+                <Join v-bind:lessonName="lessonName" v-bind:user="user" />
+            </div>
         </section>
         <div class="content">
         </div>
@@ -22,9 +22,10 @@ Vue.use(Buefy)
 
 export default {
   name: "LiveLessons",
+    props: ["lessonName", "user"],
   components: {
     Join
-  }
+  },
 }
 </script>
 

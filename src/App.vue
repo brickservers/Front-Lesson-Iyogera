@@ -1,17 +1,38 @@
 <template>
   <div id="app">
     <Header />
-    <router-view/>
+    <router-view v-bind:user="user" />
   </div>
 </template>
 
 <script>
 import Header from './components/layout/Header';
+import axios from "axios";
 export default {
   name:"app",
   components: {
     Header
-  }
+  },
+
+  data() {
+    return {
+      user: []
+    }
+  },
+
+  async mounted() {
+    const config = {
+      method: 'get',
+      url: 'https://iyogera.dev/iyogera2/api/me',
+      headers: {
+        'Authorization': '*',
+        'Access-Control-Allow-Origin': '*'
+      }
+    }
+    let res = await axios(config)
+    console.log(res.data);
+    //this.user = res.data
+  },
 }
 </script>
 

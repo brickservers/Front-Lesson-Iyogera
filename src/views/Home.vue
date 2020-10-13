@@ -2,7 +2,7 @@
 <template>
   <div id="app">
 
-    <Todos v-bind:todos="todos" />
+    <Todos v-bind:todos="todos" v-bind:user="user" />
     
   </div>
 </template>
@@ -21,9 +21,10 @@ export default {
   name: 'Home',
   components: {
     Todos,
-    
-    
   },
+  props: [
+    "user"
+  ],
   data() {
     return {
       todos: []
@@ -32,10 +33,10 @@ export default {
 
   async created() {
     try{
-    let res = await axios.get('https://demo.iyogera.com/api/live_lesson')
+    let res = await axios.get('https://iyogera.dev/iyogera2/api/live_lesson')
       this.todos = res.data.data
       
-    }catch(err){console.log(err)
+    }catch(err){(err)
       }
     }
     

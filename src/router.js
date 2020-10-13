@@ -1,27 +1,33 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 import Home from './views/Home.vue'
 import Incall from './views/Incall.vue'
 import Lesson from './views/Lesson.vue'
+import Login from './views/Login.vue'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
-  routes: [
+  const routes = [
     {
       path: '/',
       name: 'home',
       component: Home
     },
     {
-      path: '/in-call',
-      name: 'In-call',
-      component: Incall
-    },
-    {
       path: '/lessons',
       name: 'Lesson',
       component: Lesson
+    },
+    {
+      path: '/in-call/:id',
+      name: 'InCall',
+      props: true,
+      component: Incall
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     },
     {
       path: '/about',
@@ -32,4 +38,13 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     }
   ]
-})
+  const router = new VueRouter({
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes,
+    scrollBehavior(to, from, savedPosition){
+      return { x: 0, y: 0}
+    }
+  })
+export default router
+

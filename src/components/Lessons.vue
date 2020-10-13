@@ -1,18 +1,18 @@
 <template>
     <main class="concord" id="concord-cards">
-        <h2 style="color: black"> ⌛️ LESSONS</h2>        
-        <div v-bind:key="lesson.id" v-for="lesson in lessons"> 
-            <a :href="'/in-call/' + lesson.id">             
+        <h2 style="color: black"> ⌛ LESSONS</h2>
+        <div :key="lesson.id" v-for="lesson in lessons">
+            <router-link :to="{ name: 'InCall', params: {id: lesson.slug, lessonName: lesson } }">
             <div class="card " data-color="" >            
                 <section class="wrapper">
-                    <img style="background-color: grey; background-image: url(https://demo.iyogera.com/img/business-analysis.png)" alt="">                
+                    <img style="background-color: grey; background-image: url(https://iyogera.dev/iyogera2/img/business-analysis.png)" alt="">                
                     <footer class="card-footer">
                         <h5> {{lesson.topic}} </h5>
                         <h6>👩🏾‍🏫 {{lesson.name}}</h6>
                     </footer>
                 </section>                    
             </div>
-            </a>
+            </router-link>
         </div>       
     </main> 
 </template>
@@ -31,16 +31,18 @@ export default {
 
   data() {
     return {
-      lessons: []
+      lessons: [],
+        lessonName: [],
+        guest: false
     }
   },
     
   async mounted() {
     try{
-    let res = await axios.get('https://demo.iyogera.com/api/live_lessons')
+    let res = await axios.get('https://iyogera.dev/iyogera2/api/live_lessons')
       this.lessons = res.data
       
-    }catch(err){console.log(err)
+    }catch(err){(err)
       }
     }
 

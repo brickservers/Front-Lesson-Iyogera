@@ -9,19 +9,24 @@
 <script>
 import { JitsiMeet } from '@mycure/vue-jitsi-meet';
 export default {
+  props: [
+    "lessonName",
+    "user"
+  ],
   components: {
     VueJitsiMeet: JitsiMeet
   },
   computed: {
     jitsiOptions () {
+      let url = this.lessonName.live_url;
       return {
-        roomName: 'kke',
+        roomName: url,
         noSSL: false,
         width: 600,
         height: 500,
         userInfo: {
           email: 'user@email.com',
-          displayName: '',
+          displayName: 'Love',
         },
         configOverwrite: {
           enableNoisyMicDetection: true
@@ -36,8 +41,11 @@ export default {
     },
   },
   methods: {
+
     onIFrameLoad () {
-      // do stuff
+      //
+      let password = this.lessonName.password;
+      this.$refs.jitsiRef.executeCommand('password', password );
     },
   },
 };
