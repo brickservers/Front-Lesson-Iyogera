@@ -1,7 +1,6 @@
 <template>
   <div id="app">
 
-    <Header/>
     <Lessons />
     
   </div>  

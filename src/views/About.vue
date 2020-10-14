@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-  <Header />
     <h1>About</h1>
     <p>Iyogera Lessons</p>
     <p>V0.0.3</p>

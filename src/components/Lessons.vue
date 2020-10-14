@@ -33,13 +33,14 @@ export default {
     return {
       lessons: [],
         lessonName: [],
+
         guest: false
     }
   },
     
   async mounted() {
     try{
-    let res = await axios.get('https://iyogera.dev/iyogera2/api/live_lessons')
+    let res = await axios.get('https://demo.iyogera.com/api/live_lessons')
       this.lessons = res.data
       
     }catch(err){(err)

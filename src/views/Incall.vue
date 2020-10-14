@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <Header/>
-    <LiveLessons v-bind:lessonName="lessonName"  />
+    <LiveLessons v-bind:lessonName="lessonName" v-bind:user="user"  />
   </div>
 </template>
 
@@ -17,7 +16,7 @@ Vue.use(Buefy)
 
 export default {
   name: 'Incall',
-  props: ["lessonName"],
+  props: ["lessonName", "user"],
   components: {
     LiveLessons,
     Header

@@ -5,11 +5,11 @@
             <section class="wrapper">
                 <img style="background-color: #b3b3b3; background-image: url(https://iyogera.dev/iyogera2/img/man-copy.png)" alt="">
                 <header class="card-title">
-                    <img class="icon" style="background-image: url(https://iyogera.dev/iyogera2/img/100538759_3042369505846272_7693349259743068160_o.jpg);">
+                    <img class="icon" :style="{backgroundImage: `url(${commit_user})`}">
                     <h3 style="color: black">Hi,</h3> 
                     <h2>
                         
-                        <a href="#">Wallace</a>
+                        <a href="#">{{user.first_name}}</a>
                         
                     </h2>
                     <div class="container is-fluid">
@@ -85,8 +85,22 @@ export default {
     TodoItem
   },
 
-  props: ["todos", "user"]
+  props: ["todos", "user"],
+
+    data() {
+        return{
+            //let ii = this.user.id;
+            user_name: 'https://demo.iyogera.com/backend/images/user_image/' + this.user.id + '.jpg',
+        }
+    },
+    computed:{
+        commit_user() {
+            let localOptions = 'https://demo.iyogera.com/backend/images/user_image/' + this.user.id + '.jpg'
+            return localOptions;
+        }
+    }
 }
+
 
 </script>
 

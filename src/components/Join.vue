@@ -17,16 +17,24 @@ export default {
     VueJitsiMeet: JitsiMeet
   },
   computed: {
+
+      commit_user() {
+        let localOptions = 'https://demo.iyogera.com/backend/images/user_image/' + this.user.id + '.jpg'
+        return localOptions;
+      },
+
     jitsiOptions () {
       let url = this.lessonName.live_url;
+      let name = this.user.first_name + ' ' + this.user.other_name;
+      let email = this.user.email;
       return {
         roomName: url,
         noSSL: false,
         width: 600,
         height: 500,
         userInfo: {
-          email: 'user@email.com',
-          displayName: 'Love',
+          email: email,
+          displayName: name,
         },
         configOverwrite: {
           enableNoisyMicDetection: true
@@ -45,7 +53,9 @@ export default {
     onIFrameLoad () {
       //
       let password = this.lessonName.password;
+      let user_pix = this.commit_user;
       this.$refs.jitsiRef.executeCommand('password', password );
+      this.$refs.jitsiRef.executeCommand('avatarURL', user_pix );
     },
   },
 };
