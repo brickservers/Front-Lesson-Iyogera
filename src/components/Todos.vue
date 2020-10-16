@@ -3,7 +3,7 @@
   <div class="card xl i">
             <input type="button" class="concord exit" value="×" />
             <section class="wrapper">
-                <img style="background-color: #b3b3b3; background-image: url(https://iyogera.dev/iyogera2/img/man-copy.png)" alt="">
+                <img style="background-color: #b3b3b3; background-image: url(https://demo.iyogera.com/img/man-copy.png)" alt="">
                 <header class="card-title">
                     <img class="icon" :style="{backgroundImage: `url(${commit_user})`}">
                     <h3 style="color: black">Hi,</h3> 
@@ -55,7 +55,7 @@
         <div class="card x" data-color="" >
             <input type="button" class="concord exit" value="×" />
             <section class="wrapper">
-                <img style="background-color: #b3b3b3; background-image: url(https://iyogera.dev/iyogera2/img/lady.jpg)" alt="">
+                <img style="background-color: #b3b3b3; background-image: url(https://demo.iyogera.com/img/lady.jpg)" alt="">
                 <header class="card-title">
                     <h2 style="color: black">Homework</h2>
                     <hr>
