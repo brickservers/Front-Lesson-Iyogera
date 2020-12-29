@@ -36,7 +36,7 @@ Vue.use(VueRouter)
     {
       path: '/login',
       name: 'Login',
-      component: Login,
+      component: () => import(/* webpackChunkName: "login" */ './views/Login.vue'),
       meta: {
         guest: true
       }
