@@ -84,7 +84,7 @@
     export default {
         name: "Login",
         components: {
-            ModalForm,
+
 
         },
         data() {

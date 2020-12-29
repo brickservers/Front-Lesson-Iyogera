@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from './views/Home.vue'
 import Incall from './views/Incall.vue'
 import Lesson from './views/Lesson.vue'
-import Login from './views/Login.vue'
+//import Login from './views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -12,34 +12,26 @@ Vue.use(VueRouter)
       path: '/',
       name: 'home',
       component: Home,
-      meta: {
-        requiresAuth: true
-      }
+
     },
     {
       path: '/lessons',
       name: 'Lesson',
       component: Lesson,
-      meta: {
-        requiresAuth: true
-      }
+
     },
     {
       path: '/in-call/:id',
       name: 'InCall',
       props: true,
       component: Incall,
-      meta: {
-        requiresAuth: true
-      }
+
     },
     {
       path: '/login',
       name: 'Login',
       component: () => import(/* webpackChunkName: "login" */ './views/Login.vue'),
-      meta: {
-        guest: true
-      }
+
     },
     {
       path: '/about',
