@@ -1,38 +1,99 @@
 <template>
-    <div id="app">
-        <form class="container">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="form-control"
-                        v-model="email">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        class="form-control"
-                        v-model="password">
-            </div>
-            <button type="submit" class="btn btn-primary" @click.prevent="signin">Signin</button>
-        </form>
-    </div>
+  <div class="vue-tempalte">
+    <form>
+      <h3>Sign In</h3>
+
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" class="form-control form-control-lg" />
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control form-control-lg" />
+      </div>
+
+      <button type="submit" class="btn btn-dark btn-lg btn-block">Sign In</button>
+
+      <p class="forgot-password text-right mt-2 mb-4">
+        <router-link to="/forgot-password">Forgot password ?</router-link>
+      </p>
+
+      <div class="social-icons">
+        <ul>
+          <li><a href="#"><i class="fa fa-google"></i></a></li>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        </ul>
+      </div>
+
+    </form>
+  </div>
 </template>
 
 <script>
     import axios from 'axios';
+    import Vue from 'vue'
+    import Buefy from 'buefy'
+    import 'buefy/dist/buefy.css'
+    Vue.use(Buefy)
+
+    const ModalForm = {
+        props: ['email', 'password', 'canCancel'],
+        template: `
+            <form action="">
+                <div class="modal-card" style="width: auto">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Login</p>
+                        <button
+                            type="button"
+                            class="delete"
+                            @click="$emit('close')"/>
+                    </header>
+                    <section class="modal-card-body">
+                        <b-field label="Email">
+                            <b-input
+                                type="email"
+                                :value="email"
+                                placeholder="Your email"
+                                required>
+                            </b-input>
+                        </b-field>
+
+                        <b-field label="Password">
+                            <b-input
+                                type="password"
+                                :value="password"
+                                password-reveal
+                                placeholder="Your password"
+                                required>
+                            </b-input>
+                        </b-field>
+
+                        <b-checkbox>Remember me</b-checkbox>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button" type="button" @click="$emit('close')">Close</button>
+                        <button class="button is-primary">Login</button>
+                    </footer>
+                </div>
+            </form>
+        `
+    }
 
     export default {
+        name: "Login",
+        components: {
+            ModalForm,
+
+        },
         data() {
             return {
-                username: '',
-                email: '',
-                password: ''
+                //isComponentModalActive: false,
+                formProps: {
+                    email: '',
+                    password: ''
+                }
             }
         },
         methods: {
@@ -57,248 +118,5 @@
         }
     }
 </script>
-
-<style scoped>
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    #app {
-        font-family: Tahoma;
-        font-size: 1rem;
-        color: #222;
-        background-color: #092525;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .container {
-        position: relative;
-        width: 768px;
-        height: 480px;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, .2),
-        0 10px 10px rgba(0, 0, 0, .2);
-        background: linear-gradient(to bottom, #efefef, #ccc);
-
-    .overlay-container {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 50%;
-        height: 100%;
-        overflow: hidden;
-        transition: transform .5s ease-in-out;
-        z-index: 100;
-    }
-
-    .overlay {
-        position: relative;
-        left: -100%;
-        height: 100%;
-        width: 200%;
-        background: linear-gradient(to bottom right, #7FD625, #009345);
-        color: #fff;
-        transform: translateX(0);
-        transition: transform .5s ease-in-out;
-    }
-
-    @mixin overlays($property) {
-        position: absolute;
-        top: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-direction: column;
-        padding: 70px 40px;
-        width: calc(50% - 80px);
-        height: calc(100% - 140px);
-        text-align: center;
-        transform: translateX($property);
-        transition: transform .5s ease-in-out;
-    }
-
-    .overlay-left {
-    @include overlays(-20%);
-    }
-
-    .overlay-right {
-    @include overlays(0);
-        right: 0;
-    }
-    }
-
-    h2 {
-        margin: 0;
-    }
-
-    p {
-        margin: 20px 0 30px;
-    }
-
-    a {
-        color: #222;
-        text-decoration: none;
-        margin: 15px 0;
-        font-size: 1rem;
-    }
-
-    button {
-        border-radius: 20px;
-        border: 1px solid #009345;
-        background-color: #009345;
-        color: #fff;
-        font-size: 1rem;
-        font-weight: bold;
-        padding: 10px 40px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: transform .1s ease-in;
-
-    &:active {
-         transform: scale(.9);
-     }
-
-    &:focus {
-         outline: none;
-     }
-    }
-
-    button.invert {
-        background-color: transparent;
-        border-color: #fff;
-    }
-
-    form {
-        position: absolute;
-        top: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-direction: column;
-        padding: 90px 60px;
-        width: calc(50% - 120px);
-        height: calc(100% - 180px);
-        text-align: center;
-        background: linear-gradient(to bottom, #efefef, #ccc);
-        transition: all .5s ease-in-out;
-
-    div {
-        font-size: 1rem;
-    }
-
-    input {
-        background-color: #eee;
-        border: none;
-        padding: 8px 15px;
-        margin: 6px 0;
-        width: calc(100% - 30px);
-        border-radius: 15px;
-        border-bottom: 1px solid #ddd;
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .4),
-        0 -1px 1px #fff,
-        0 1px 0 #fff;
-        overflow: hidden;
-
-    &:focus {
-         outline: none;
-         background-color: #fff;
-     }
-    }
-    }
-
-    .sign-in {
-        left: 0;
-        z-index: 2;
-    }
-
-    .sign-up {
-        left: 0;
-        z-index: 1;
-        opacity: 0;
-    }
-
-    .sign-up-active {
-    .sign-in {
-        transform: translateX(100%);
-    }
-
-    .sign-up {
-        transform: translateX(100%);
-        opacity: 1;
-        z-index: 5;
-        animation: show .5s;
-    }
-
-    .overlay-container {
-        transform: translateX(-100%);
-    }
-
-    .overlay {
-        transform: translateX(50%);
-    }
-
-    .overlay-left {
-        transform: translateX(0);
-    }
-
-    .overlay-right {
-        transform: translateX(20%);
-    }
-    }
-
-    @keyframes show {
-        0% {
-            opacity: 0;
-            z-index: 1;
-        }
-        49% {
-            opacity: 0;
-            z-index: 1;
-        }
-        50% {
-            opacity: 1;
-            z-index: 10;
-        }
-    }
-
-
-    /* Youtube Link */
-    #yt_link
-    {
-        position: absolute;
-        right: 0;
-        left: 0;
-        bottom: -200px;
-        display: block;
-        width: 160px;
-        text-align: center;
-        color: red;
-        font-size: 15px;
-        text-decoration: none;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        padding: 10px;
-        margin: 0 auto;
-        background-color: #fff;
-        border-radius: 2px;
-        animation: showYtLink 1.5s ease 3s forwards;
-    }
-
-    @keyframes showYtLink
-    {
-        0%{ bottom: -200px; }
-        100%{ bottom: 20px; }
-    }
-</style>
-
 
 

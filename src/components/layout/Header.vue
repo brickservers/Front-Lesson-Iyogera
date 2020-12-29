@@ -17,18 +17,33 @@
               </a>
             </div>            
           </b-navbar-item>
+              <button class="button is-secondary is-mini"
+                      @click="isComponentModalActive = true">
+                    Login
+              </button>
+              <Login/>
         </template>
   </b-navbar>
 </template>
 
 <script>
-import Vue from 'vue'
-import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
+    import Login from "../../views/Login";
+    import Vue from 'vue'
+    import Buefy from 'buefy'
+    import 'buefy/dist/buefy.css'
 Vue.use(Buefy)
 
 export default {
-  name: "Header"
+  name: "Header",
+    components: {
+      Login
+    },
+    data() {
+        return {
+            isComponentModalActive: false,
+        }
+    }
+
 }
 </script>
 

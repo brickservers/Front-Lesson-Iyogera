@@ -11,23 +11,35 @@ Vue.use(VueRouter)
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/lessons',
       name: 'Lesson',
-      component: Lesson
+      component: Lesson,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/in-call/:id',
       name: 'InCall',
       props: true,
-      component: Incall
+      component: Incall,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      meta: {
+        guest: true
+      }
     },
     {
       path: '/about',

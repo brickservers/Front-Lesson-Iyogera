@@ -10,6 +10,7 @@
   "dependencies": {
     "@mycure/vue-jitsi-meet": "0.0.7",
     "axios": "^0.18.1",
+    "bootstrap": "^4.5.3",
     "buefy": "^0.9.3",
     "bulma": "^0.9.0",
     "uuid": "^3.3.2",
